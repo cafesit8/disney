@@ -1,8 +1,8 @@
-import { TvResult } from "@/app/interfaces"
+import { Result } from "@/app/interfaces"
 import Portada from "./Portada"
 
 interface GridMoviesProps {
-    movies: TvResult[]
+    movies: Result[]
 }
 
 export default function GridMovies({movies}: GridMoviesProps) {
