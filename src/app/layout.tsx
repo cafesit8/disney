@@ -18,7 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={ballo.className}>
         <NavBar />
-        {children}
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   )
