@@ -1,5 +1,6 @@
 "use client"
 import React from "react";
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import {
   Navbar,
@@ -48,30 +49,24 @@ function NavListMenu() {
  
 // nav list component
 const navListItems = [{
-    label: "Películas",
+    label: "Movies",
+    path: '/movies'
   },{
     label: "Series",
+    path: '/series'
   },{
     label: "Tv Shows",
+    path: '/tv-shows'
 }];
  
 function NavList() {
   return (
-    <ul className="mb-4 mt-2 flex flex-col gap-5 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
+    <ul className="mb-4 mt-2 flex flex-col gap-14 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center text-white">
       <NavListMenu />
-      {navListItems.map(({ label }) => (
-        <Typography
-          key={label}
-          as="a"
-          href="#"
-          variant="small"
-          color="blue-gray"
-          className="font-normal font-[default] text-white text-[16px]"
-        >
-          <MenuItem className="flex items-center gap-2 lg:rounded-full">
-            {label}
-          </MenuItem>
-        </Typography>
+      {navListItems.map(({ label, path }) => (
+        <Link className={`text-[17px]`} key={label} href={path}>
+          {label}
+        </Link>
       ))}
     </ul>
   );
@@ -111,7 +106,7 @@ export default function ComplexNavbar() {
         >
           <Bars2Icon className="h-6 w-6 text-white" />
         </IconButton>
-        <MagnifyingGlassIcon onClick={() => navigate.push("/no-exist")} className="text-white h-6 w-6 absolute right-3" />
+        <MagnifyingGlassIcon onClick={() => navigate.push("/search")} className="text-white h-6 w-6 absolute right-3" />
       </div>
       <Collapse open={isNavOpen} className="overflow-scroll">
         <NavList />
