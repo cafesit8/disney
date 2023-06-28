@@ -1,22 +1,9 @@
-import { useStore } from "@/app/store/zustand"
+import Poster from './components/Poster'
 
-interface PropsParams {
-  params: {
-    movie: string
-  }
-}
-
-function useMovieDetails() {
-  const { movieDetails } = useStore()
-}
-
-export default function Page({params}: PropsParams) {
-  const { movie } = params
-  const { movieDetails } = useStore()
-  console.log(movieDetails)
+export default function Page() {
   return (
-    <div>
-
-    </div>
+    <main>
+      <Poster />
+    </main>
   )
 }

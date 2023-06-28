@@ -6,5 +6,5 @@ interface PropsButton {
 }
 
 export default function Example({text}: PropsButton) {
-  return <Button onClick={()=>console.log(text)} size="sm" className="font-[default] text-[16px] self-baseline">{text}</Button>;
+  return <Button onClick={()=>console.log(text)} size="sm" className="!cursor-pointer font-[default] text-[16px] self-baseline">{text}</Button>;
 }
