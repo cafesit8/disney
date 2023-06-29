@@ -7,7 +7,6 @@ import {
   Typography,
   Menu,
   MenuList,
-  MenuItem,
   Card,
   IconButton,
   Collapse,
@@ -50,7 +49,7 @@ function NavListMenu() {
 // nav list component
 const navListItems = [{
     label: "Movies",
-    path: '/movies'
+    path: '/movie'
   },{
     label: "Series",
     path: '/series'
@@ -61,7 +60,7 @@ const navListItems = [{
  
 function NavList() {
   return (
-    <ul className="mb-4 mt-2 flex flex-col gap-14 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center text-white">
+    <ul className="mb-4 mt-2 ml-2 flex flex-col lg:gap-20 gap-5 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center text-white">
       <NavListMenu />
       {navListItems.map(({ label, path }) => (
         <Link className={`text-[17px]`} key={label} href={path}>
@@ -87,13 +86,7 @@ export default function ComplexNavbar() {
   return (
     <Navbar fullWidth={true} shadow={false} className="p-2 lg:pl-6 bg-transparent border-none mx-auto fixed z-20 text-white">
       <div className="relative mx-auto flex items-center text-blue-gray-900">
-        <Typography
-          as="a"
-          href="#"
-          className="mr-4 ml-2 cursor-pointer py-1.5 text-xl font-medium text-white font-[default]"
-        >
-          Disney App
-        </Typography>
+        <Link className="mr-4 ml-2 cursor-pointer py-1.5 text-xl font-medium text-white font-[default]" href={'/'}>Disney App</Link>
         <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
           <NavList />
         </div>

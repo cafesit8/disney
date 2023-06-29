@@ -21,6 +21,9 @@ module.exports = withMT({
         default: ['Baloo_Bhaina_2', 'sans-serif']
       }
     },
+    colors: {
+      background: 'rgba(23,26,37,0.7)',
+    }
   },
   plugins: [],
 })
