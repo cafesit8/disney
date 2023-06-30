@@ -1,11 +1,11 @@
-import { ResultMoviesTopRated } from '@/app/interfaces'
+import { Card } from '@/app/interfaces'
 import Image from 'next/image'
 
 interface CardProps {
-    info: ResultMoviesTopRated
+    info: Card
 }
 
-export default function Card({info}: CardProps) {
+export default function CardPresentation({info}: CardProps) {
   return (
     <article className='mx-[5%] max-w-[1280px] flex gap-5 items-center'>
         <div className='w-[500px] h-full overflow-hidden rounded-lg'>    

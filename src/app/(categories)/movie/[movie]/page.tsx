@@ -1,4 +1,4 @@
-import Poster from './components/Poster'
+import Poster from '@/app/view/Poster'
 
 export default function Page() {
   return (

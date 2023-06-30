@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { RootMoviesDetails } from '../interfaces'
 
 interface PropsStore {
-  movieDetails: RootMoviesDetails;
+  movieDetails: Partial<RootMoviesDetails>;
   getMovieDetails: (id: number) => void;
 }
 

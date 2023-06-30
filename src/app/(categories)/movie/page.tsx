@@ -1,7 +1,7 @@
 import Bg from '@/app/components/bg';
-import { ResultMoviesTopRated } from '@/app/interfaces'
-import Image from 'next/image'
-import Card from '../components/Card';
+import { Card as CardInterface } from '@/app/interfaces'
+import CardPresentation from '../components/CardPresentation';
+import Card from '@/app/components/Card'
 
 async function getMoviesTopRated(){
     try {
@@ -23,21 +23,19 @@ async function getMoviesTopRated(){
 }
 
 export default async function page() {
-  const results: ResultMoviesTopRated[] = await getMoviesTopRated();
+  const results: CardInterface[] = await getMoviesTopRated();
   const present = results[Math.floor(Math.random() * results.length)]
 
   return (
     <>
         <section className='w-full h-screen bg-background relative text-white flex justify-start items-center'>
             <Bg image={present.backdrop_path} />
-            <Card info={present} />
+            <CardPresentation info={present} />
         </section>
         <section className='w-full min-h-screen bg-[#171a25] px-6 py-10'>
             <div className='w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6'>
                 {results.map(movie => (
-                    <article key={movie.id} className='w-full h-full'>
-                        <Image src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} width={500} height={500} />
-                    </article>
+                  <Card key={movie.id} movie={movie} />
                 ))}
             </div>
         </section>

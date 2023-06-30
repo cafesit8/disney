@@ -16,6 +16,7 @@ import {
   Bars2Icon,
   MagnifyingGlassIcon
 } from "@heroicons/react/24/outline";
+import { navListItems } from '@/app/routes/nav'
  
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -45,18 +46,6 @@ function NavListMenu() {
     </React.Fragment>
   );
 }
- 
-// nav list component
-const navListItems = [{
-    label: "Movies",
-    path: '/movie'
-  },{
-    label: "Series",
-    path: '/series'
-  },{
-    label: "Tv Shows",
-    path: '/tv-shows'
-}];
  
 function NavList() {
   return (
