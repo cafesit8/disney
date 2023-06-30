@@ -1,8 +1,8 @@
-import { Result } from "@/app/interfaces"
+import { Card as CardInterface } from "@/app/interfaces"
 import Card from "./Card"
 
 interface GridMoviesProps {
-    movies: Result[]
+    movies: CardInterface[]
 }
 
 export default function GridMovies({movies}: GridMoviesProps) {
