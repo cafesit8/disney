@@ -15,14 +15,14 @@ async function getMoviesTopRated(){
       
         if (response.ok) {
           const result = await response.json();
-          return result.results.filter((item: any) => item.backdrop_path !== null);
+          return result.results.filter((item: CardInterface) => item.backdrop_path !== null);
         }
     } catch (err) {
         console.error(err);
     }
 }
 
-export default async function page() {
+export default async function MoviePage() {
   const results: CardInterface[] = await getMoviesTopRated();
   const present = results[Math.floor(Math.random() * results.length)]
 

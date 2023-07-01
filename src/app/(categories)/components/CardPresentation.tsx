@@ -1,8 +1,8 @@
-import { Card } from '@/app/interfaces'
+import { Card, SeriesTv } from '@/app/interfaces'
 import Image from 'next/image'
 
-interface CardProps {
-    info: Card
+type CardProps = {
+    info: Card | SeriesTv
 }
 
 export default function CardPresentation({info}: CardProps) {
@@ -12,7 +12,7 @@ export default function CardPresentation({info}: CardProps) {
             <Image priority={true} className='w-full h-full' alt={info.title} src={`https://image.tmdb.org/t/p/w500/${info.poster_path}`} width={800} height={500} />
         </div>
         <div className='w-full'>
-            <h2 className='sm:text-[55px] text-[30px] font-extrabold'>{info.title}</h2>
+            <h2 className='sm:text-[55px] text-[30px] font-extrabold'>{info.title}{info.name}</h2>
             <div className='flex flex-col'>
                 <span className='text-gray-300'>Original Lenguage: {info.original_language}</span>
                 <span className='text-gray-300'>Popularity: {info.popularity}</span>

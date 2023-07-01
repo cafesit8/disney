@@ -24,7 +24,7 @@ export default function Card({movie}: PropsCard) {
           <Image placeholder='empty' blurDataURL={movie.poster_path} priority={false} className="hover:scale-105 w-full h-full object-cover duration-200 cursor-pointer" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} width={300} height={500} />
         </picture>
         <div className='w-full h-[30%] p-2 text-white flex flex-col justify-center overflow-hidden'>
-          <h3 className='font-bold sm:text-[17px] text-[13px]'>{movie.title}</h3>
+          <h3 className='font-bold sm:text-[17px] text-[13px]'>{movie.title}{movie.name}</h3>
           <small className='block sm:text-[14px] text-[10px]'>Origen Title: {movie.original_title}</small>
           <small className='block sm:text-[14px] text-[10px]'>Popularity: {movie.popularity}</small>
         </div>
