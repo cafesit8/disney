@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import { useState, useEffect } from "react";
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import {
@@ -19,7 +19,7 @@ import {
 import { navListItems } from '@/app/routes/nav'
  
 function NavListMenu() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
  
   const triggers = {
     onMouseEnter: () => setIsMenuOpen(true),
@@ -27,7 +27,7 @@ function NavListMenu() {
   };
  
   return (
-    <React.Fragment>
+    <>
       <Menu open={isMenuOpen} handler={setIsMenuOpen}>
         <MenuList
           {...triggers}
@@ -43,7 +43,7 @@ function NavListMenu() {
           </Card>
         </MenuList>
       </Menu>
-    </React.Fragment>
+    </>
   );
 }
  
@@ -61,38 +61,49 @@ function NavList() {
 }
  
 export default function ComplexNavbar() {
-  const [isNavOpen, setIsNavOpen] = React.useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [navActive, setNavActive] = useState(false)
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
   const navigate = useRouter()
  
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener(
       "resize",
       () => window.innerWidth >= 960 && setIsNavOpen(false)
     );
   }, []);
+
+  window.addEventListener('scroll', ()=>{
+    if (window.scrollY > 100) {
+        setNavActive(true)
+    }else{
+        setNavActive(false)
+    }
+  })
  
   return (
-    <Navbar fullWidth={true} shadow={false} className="p-2 lg:pl-6 bg-transparent border-none mx-auto fixed z-20 text-white">
-      <div className="relative mx-auto flex items-center text-blue-gray-900">
-        <Link className="mr-4 ml-2 cursor-pointer py-1.5 text-xl font-medium text-white font-[default]" href={'/'}>Disney App</Link>
-        <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
-          <NavList />
+    <header className={`${navActive ? 'bg-[#171a25]' : 'bg-transparent'} w-full fixed z-50 duration-300 blur-none`}>
+      <Navbar fullWidth={true} shadow={false} className="p-2 bg-transparent border-none mx-auto z-50 text-white 2xl:w-[1920px]">
+        <div className="relative mx-auto flex items-center text-blue-gray-900">
+          <Link className="mr-4 ml-2 cursor-pointer py-1.5 text-xl font-medium text-white font-[default]" href={'/'}>Disney App</Link>
+          <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
+            <NavList />
+          </div>
+          <IconButton
+            size="sm"
+            color="blue-gray"
+            variant="text"
+            onClick={toggleIsNavOpen}
+            className="ml-auto mr-14 lg:hidden"
+          >
+            <Bars2Icon className="h-6 w-6 text-white" />
+          </IconButton>
+          <MagnifyingGlassIcon onClick={() => navigate.push("/search")} className="text-white h-6 w-6 absolute right-3" />
         </div>
-        <IconButton
-          size="sm"
-          color="blue-gray"
-          variant="text"
-          onClick={toggleIsNavOpen}
-          className="ml-auto mr-14 lg:hidden"
-        >
-          <Bars2Icon className="h-6 w-6 text-white" />
-        </IconButton>
-        <MagnifyingGlassIcon onClick={() => navigate.push("/search")} className="text-white h-6 w-6 absolute right-3" />
-      </div>
-      <Collapse open={isNavOpen} className="overflow-scroll">
-        <NavList />
-      </Collapse>
-    </Navbar>
+        <Collapse open={isNavOpen} className="overflow-scroll">
+          <NavList />
+        </Collapse>
+      </Navbar>
+    </header>
   );
 }

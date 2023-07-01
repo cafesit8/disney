@@ -1,6 +1,7 @@
 import './globals.css'
 import { Baloo_Bhaina_2 } from 'next/font/google'
 import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 
 const ballo = Baloo_Bhaina_2({ subsets: ['latin'] })
 
@@ -18,9 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={ballo.className}>
         <NavBar />
-        <main>
+        <main className='overflow-hidden'>
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   )

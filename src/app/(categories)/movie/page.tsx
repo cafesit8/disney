@@ -29,15 +29,15 @@ export default async function page() {
   return (
     <>
         <section className='w-full h-screen bg-background relative text-white flex justify-start items-center'>
-            <Bg image={present.backdrop_path} />
-            <CardPresentation info={present} />
+          <Bg image={present.backdrop_path} />
+          <CardPresentation info={present} />
         </section>
         <section className='w-full min-h-screen bg-[#171a25] sm:px-6 px-3 py-10'>
-            <div className='w-full grid sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] grid-cols-[repeat(auto-fit,minmax(130px,1fr))] sm:gap-6 gap-3'>
-                {results.map(movie => (
-                  <Card key={movie.id} movie={movie} />
-                ))}
-            </div>
+          <div className='w-full grid sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] grid-cols-[repeat(auto-fit,minmax(130px,1fr))] sm:gap-6 gap-3'>
+            {results.map(movie => (
+              <Card key={movie.id} movie={movie} />
+            ))}
+          </div>
         </section>
     </>
   )
