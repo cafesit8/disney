@@ -62,6 +62,7 @@ export type RootMoviesDetails = {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  name: string
 };
 
 export type BelongsToCollection = {

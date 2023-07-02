@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import {
   Navbar,
-  Typography,
   Menu,
   MenuList,
   Card,
@@ -72,15 +71,15 @@ export default function ComplexNavbar() {
       () => window.innerWidth >= 960 && setIsNavOpen(false)
     );
   }, []);
-
-  window.addEventListener('scroll', ()=>{
-    if (window.scrollY > 100) {
-        setNavActive(true)
-    }else{
-        setNavActive(false)
-    }
+  useEffect(() =>{
+    window.addEventListener('scroll', ()=>{
+      if (window.scrollY > 100) {
+          setNavActive(true)
+      }else{
+          setNavActive(false)
+      }
+    })
   })
- 
   return (
     <header className={`${navActive ? 'bg-[#171a25]' : 'bg-transparent'} w-full fixed z-50 duration-300 blur-none`}>
       <Navbar fullWidth={true} shadow={false} className="p-2 bg-transparent border-none mx-auto z-50 text-white 2xl:w-[1920px]">

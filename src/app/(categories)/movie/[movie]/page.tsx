@@ -1,6 +1,6 @@
 import Poster from '@/app/view/Poster'
 import Recomendations from '@/app/components/Recomendation'
-import GridImages from './components/GridImages'
+import GridImages from '../../components/GridImages'
 
 export default function Page() {
   return (

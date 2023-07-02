@@ -9,7 +9,7 @@ export default function CardPresentation({info}: CardProps) {
   return (
     <article className='mx-[5%] max-w-[1280px] flex gap-5 items-center z-20'>
         <div className='min-w-[300px] h-full overflow-hidden rounded-lg lg-max:hidden'>    
-            <Image priority={true} className='w-full h-full' alt={info.title} src={`https://image.tmdb.org/t/p/w500/${info.poster_path}`} width={800} height={500} />
+            <Image priority={true} className='w-full h-full' alt={info.overview} src={`https://image.tmdb.org/t/p/w500/${info.poster_path}`} width={800} height={500} />
         </div>
         <div className='w-full'>
             <h2 className='sm:text-[55px] text-[30px] font-extrabold'>{info.title}{info.name}</h2>
