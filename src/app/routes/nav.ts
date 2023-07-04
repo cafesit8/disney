@@ -1,10 +1,10 @@
 export const navListItems = [{
+    label: "Home",
+    path: '/'
+  },{
     label: "Movies",
     path: '/movie'
   },{
-    label: "Series",
+    label: "Tv Series",
     path: '/series'
-  },{
-    label: "Tv Shows",
-    path: '/tv-shows'
 }];

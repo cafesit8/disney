@@ -28,9 +28,9 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className={`w-full h-screen bg-[rgba(23,26,37,0.7)] relative text-white flex justify-start items-center`}>
+      <section className={`w-full h-screen bg-[rgba(23,26,37,0.7)] relative text-white flex justify-start items-center bg-gradient`}>
         <Bg image={selected.backdrop_path} />
-        <article className='ml-[5%] max-w-[600px] mr-[5%] flex flex-col gap-2'>
+        <article className='ml-[5%] max-w-[600px] mr-[5%] flex flex-col gap-2 z-30'>
           <h1 className='sm:text-6xl text-[30px] font-bold'>{selected.title}</h1>
           <p className='sm:text-[17px] text-[15px]'>{selected.overview}</p>
           <Button text='Ver más' />

@@ -6,7 +6,7 @@ import { useStore } from "@/app/store/zustand"
 export default function Poster() {
     const { details } = useStore()
     return (
-      <section className="w-full h-screen bg-[rgba(23,26,37,0.7)] relative text-white flex items-center">
+      <section className="w-full h-screen bg-[rgba(23,26,37,0.7)] relative text-white flex items-center bg-gradient">
         <Bg image={details.backdrop_path!} />
         <article className='ml-[5%] max-w-[800px] mr-[5%] flex flex-col gap-2 z-30'>
             <h1 className='sm:text-6xl text-[30px] font-bold'>{details.title}{details.name}</h1>

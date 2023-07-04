@@ -97,7 +97,7 @@ export default function ComplexNavbar() {
           >
             <Bars2Icon className="h-6 w-6 text-white" />
           </IconButton>
-          <MagnifyingGlassIcon onClick={() => navigate.push("/search")} className="text-white h-6 w-6 absolute right-3" />
+          <MagnifyingGlassIcon onClick={() => navigate.push("/search")} className="text-white h-6 w-6 absolute right-3 cursor-pointer" />
         </div>
         <Collapse open={isNavOpen} className="overflow-scroll">
           <NavList />

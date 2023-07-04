@@ -28,7 +28,7 @@ export default function Card({movie}: PropsCard) {
     <div className="rounded-md overflow-hidden">
       <article className='flex flex-col overflow-hidden rounded-md bg-[#252a3d] sm:h-[440px] h-[300px]'>
         <picture onClick={handleClick} className='w-full h-[70%] overflow-hidden'>
-          <Image placeholder='empty' blurDataURL={movie.poster_path} priority={false} className="hover:scale-105 w-full h-full object-cover duration-200 cursor-pointer" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.overview} width={300} height={500} />
+          <Image placeholder='empty' blurDataURL={movie.poster_path} priority={false} className="hover:scale-105 w-full h-full object-cover duration-200 cursor-pointer" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.overview} width={500} height={750} />
         </picture>
         <div className='w-full h-[30%] p-2 text-white flex flex-col justify-center overflow-hidden'>
           <h3 className='font-bold sm:text-[17px] text-[13px]'>{movie.title}{movie.name}</h3>

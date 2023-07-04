@@ -5,7 +5,7 @@ import Image from 'next/image'
 export default function GridImages() {
   const { images } = useStore()
   return (
-    <section className="w-full h-full mb-10 bg-[#171a25]">
+    <section className="w-full h-full py-14 mb-10 bg-[#171a25]">
       <h3 className="text-white text-2xl">Imágenes:</h3>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] sm:gap-6 gap-4">
         {images.slice(0, 10).map(image => (

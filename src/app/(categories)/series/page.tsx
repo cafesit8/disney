@@ -28,7 +28,7 @@ export default async function SeriesPage() {
   const present = data[Math.floor(Math.random() * data.length)]
   return (
     <>
-        <section className='w-full h-screen bg-background relative text-white flex justify-start items-center'>
+        <section className='w-full h-screen bg-background text-white flex justify-start items-center relative bg-gradient'>
             <Bg image={present.backdrop_path} />
             <CardPresentation info={present} />
         </section>

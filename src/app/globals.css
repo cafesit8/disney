@@ -12,3 +12,23 @@
   box-sizing: border-box;
   animation: rotation 0.5s linear infinite;
 }
+
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+} 
+
+.bg-gradient::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(23,26,37,1) 1%, rgba(15,15,15,0) 60%);
+  z-index: 15;
+}
